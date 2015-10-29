@@ -73,12 +73,4 @@
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/button2" />
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:layout_toEndOf="@+id/textView2" />
-
 </RelativeLayout>
