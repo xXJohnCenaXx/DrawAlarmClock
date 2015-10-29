@@ -8,18 +8,21 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import java.sql.Time;
+
 public class MainActivity extends AppCompatActivity {
     int difficulty = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Spinner dropdown = (Spinner)findViewById(R.id.spinner1);
-        String[] items = new String[]{"1", "2", "3"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
+//        Spinner dropdown = (Spinner)findViewById(R.id.spinner1);
+//        String[] items = new String[]{"1", "2", "3"};
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+//        dropdown.setAdapter(adapter);
     }
 
     @Override
@@ -45,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addAlarm(View view) {
-
+//        Time savedTime = new Time(System.currentTimeMillis());
+//        Time savedTime = new Time();
     }
 
     public void difficultyChange(View view) {
