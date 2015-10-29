@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
     public void addAlarm(View view) {
 //        Time savedTime = new Time(System.currentTimeMillis());
 //        Time savedTime = new Time();
+//        NextFragment nextFrag= new NextFragment();
+//        this.getFragmentManager().beginTransaction()
+//                .replace(R.id.Layout_container, nextFrag,TAG_FRAGMENT)
+//                .addToBackStack(null)
+//                .commit();
     }
 
     public void difficultyChange(View view) {
