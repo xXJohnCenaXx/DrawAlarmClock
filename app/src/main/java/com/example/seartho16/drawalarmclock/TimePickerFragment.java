@@ -1,15 +1,20 @@
 package com.example.seartho16.drawalarmclock;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.TimePickerDialog;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
-
+import java.util.Calendar;
 
 
 /**
@@ -20,7 +25,7 @@ import android.widget.TextView;
  * Use the {@link TimePickerFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TimePickerFragment extends Fragment {
+public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -53,6 +58,19 @@ public class TimePickerFragment extends Fragment {
     public TimePickerFragment() {
         // Required empty public constructor
     }
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        // Use the current time as the default values for the picker
+        final Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+
+        // Create a new instance of TimePickerDialog and return it
+        return new TimePickerDialog(getActivity(), this, hour, minute,
+                DateFormat.is24HourFormat(getActivity()));
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,6 +114,11 @@ public class TimePickerFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        // Do something with the time chosen by the user
+    }
+
 
     /**
      * This interface must be implemented by activities that contain this
