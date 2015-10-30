@@ -1,5 +1,7 @@
 package com.example.seartho16.drawalarmclock;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -55,6 +57,15 @@ public class MainActivity extends AppCompatActivity {
 //                .replace(R.id.Layout_container, nextFrag,TAG_FRAGMENT)
 //                .addToBackStack(null)
 //                .commit();
+        Fragment newFragment = new Fragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.timePicker, newFragment);
+        transaction.addToBackStack(null);
+
+        transaction.commit();
+
+
     }
 
     public void difficultyChange(View view) {
