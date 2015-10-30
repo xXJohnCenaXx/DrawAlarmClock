@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment newFragment = new Fragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
-        transaction.replace(R.id.timePicker, newFragment);
+        transaction.replace(R.id., newFragment);
         transaction.addToBackStack(null);
 
         transaction.commit();
